@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço Médio Ações</title>
+</head>
+<body>
+    <h1>Preço Médio Acões</h1>
+    Digite a quantidade de ações que você possui. <input type="number" name="txtqtdacao1" id="txtqtdacao1">
+    <br>Digite o preço que pagou por essas ações. <input type="number" name="txtprecoacao1" id="txtprecoacao1">
+    <br>Digite quantos você reais voce vai comprar <input type="number" name="txtinvestimento" id="txtinvestimento">
+    <br>Digite o preço que está a ação . <input type="number" name="txtprecoacao2" id="txtprecoacao2">
+    
+    <br><br><input type="button" value="Calcular Preço Médio" onclick="calcular()">
+    <div id = "res">
+
+    </div>
+    <script>
+       var qtdacao1
+       var precoacao1
+       var investimento
+       var precoacao2
+       var txtinvestimento
+       var txtprecoacao2
+       var qdtacao2
+       var precomedio
+       var res
+       var txtqtdacao1
+       var txtprecoacao1
+      
+      
+       function calcular() {
+            txtqtdacao1 = window.document.getElementById('txtqtdacao1')
+             qtdacao1 = Number(txtqtdacao1.value)
+            
+            txtprecoacao1 = window.document.getElementById('txtprecoacao1')
+             precoacao1 = Number(txtprecoacao1.value)
+           
+           
+             txtinvestimento = window.document.getElementById('txtinvestimento')
+             investimento = Number(txtinvestimento.value)
+            
+            txtprecoacao2 = window.document.getElementById('txtprecoacao2')
+             precoacao2 = Number(txtprecoacao2.value)
+
+           qdtacao2 = investimento/precoacao2
+
+             precomedio = ((precoacao1*qtdacao1) + (precoacao2*qdtacao2))/(qtdacao1+qdtacao2)
+            
+            
+            res = window.document.querySelector ('div#res')
+            
+            res.innerHTML = `<p>Seu Preço Médio é de <strong> ${precomedio}<\strong><\p>`
+                console.log(precomedio)
+            
+               
+                
+            
+            }
+            
+            
+            
+
+        
+
+
+
+    </script>
+</body>
+</html>
